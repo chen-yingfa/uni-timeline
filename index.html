@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'"> -->
+    <link rel="stylesheet" href="./style/style.css">
+    <script type = "text/javascript" src = "./src/vue.js"></script>
+    <title>Timeline</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="title-bar">
+        <div class="nav-bar-container">
+          <div class="nav-bar">
+            <button @click="newTimeline()" class="nav-bar-btn new-btn">
+              <p>新建</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+            <button class="nav-bar-btn load-btn">
+              <p>载入</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+            <button class="nav-bar-btn load-btn">
+              <p>保存</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+            <button v-on:click="addEvent" class="nav-bar-btn load-btn">
+              <p>添加</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+            <button class="nav-bar-btn load-btn">
+              <p>设置</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+            <button class="nav-bar-btn load-btn">
+              <p>筛选</p>
+            </button>
+            <div class="nav-bar-sep-line"></div>
+          </div>
+        </div>
+        <div id="top-right-btn">
+          <button id="btn-minimize">-</button>
+          <button @click="closeBtnClicked" id="btn-close">×</button>
+        </div>
+      </div>
+      <div id="event-board-container" onmousewheel="eventBoardScroll()">
+        <div id="event-board">
+          <div class="filler-text">
+            <a>random text here to fill ohta sdfoihj aodfuhasdlfkjha sdfoias dfoajkjdsfja 
+              asdf<br>
+              asdf<br>
+              sdf sdfosdi sdflkj <br>
+              sdlf <br>
+              DOnny <br>
+              sdfoijsdf
+            </a>
+          </div>
+          <template v-for="(item, idx) in arrEvent">
+            <div class="card" :id="item.id">
+              <div class="event-time">
+                  <p>{{ item.time.toStr() }}</p>
+              </div>
+              <div class="event-title">
+                  <p>{{ item.title }} -- {{ idx }}</p>
+              </div>
+              <div class="event-description">
+                  <p>Description: {{ item.description }}</p>
+              </div>
+            </div>
+          </template>
+          <div>random</div>
+          <!-- <iframe src="event-board.html" class="event-board-iframe" frameborder="0"> -->
+          <!-- </iframe> -->
+        </div>
+      </div>
+
+      <div v-show="getIsAddingEvent" id="add-event-container">
+        <div id="add-event-card">
+          <div class="add-event-section" id="add-event-time">
+            <input type="text" placeholder="年">
+            <input type="text" placeholder="月">
+            <input type="text" placeholder="日">
+            <!-- <input type="text" v-model="add-event-hour" placeholder="时">
+            <input type="text" v-model="add-event-minute" placeholder="分">
+            <input type="text" v-model="add-event-second" placeholder="秒"> -->
+          </div>
+          <div class="add-event-section" id="add-event-title">
+            <input type="text" placeholder="名称">
+          </div>
+          <div class="add-event-section" id="add-event-description">
+            <input type="text" placeholder="描述">
+          </div>
+          <div class="add-event-section" id="add-event-significance">
+            <input type="text" placeholder="重要性">
+          </div>
+          <div class="add-event-section" id="add-event-act">
+            <button class="add-event-btn" id="add-event-cancel-btn" @click="cancelAddEvent">取消</button>
+            <button class="add-event-btn" id="add-event-confirm-btn">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./src/renderer.js"></script>
+  </body>
+</html>

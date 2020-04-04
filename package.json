@@ -1,0 +1,15 @@
+{
+  "name": "electronTest",
+  "version": "1.0.0",
+  "description": "Electron Test Application",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^8.2.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}

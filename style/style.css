@@ -1,0 +1,249 @@
+:root {
+    --background-color: #111111;
+    --card-color: #222222;
+    --border-color: white;
+    --weak-border-color: #666666;
+    --text-color: white;
+    --button-color: #4466dd;
+    --highlight-border-color: orange;
+    --nav-bar-color: #991313;
+    /* --nav-bar-color: black; */
+    --dark-cover: rgba(0, 0, 0, 0.65)
+}
+
+html, body {
+    color: white;
+    background: black;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: SimSun, monospace;
+    font-size: 14px;
+}
+
+#app {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+input[type="text"] {
+    display: inline-block;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding: 2px;
+    color: var(--text-color);
+    border: solid var(--border-color) 0px;
+    background-color: #444444;
+    width: 100%;
+}
+
+input[type="submit"] {
+    all: unset;
+    cursor: pointer;
+    border: solid var(--border-color) 1px;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+button:hover {
+    outline: var(--highlight-border-color) 6px auto;
+}
+  
+
+p {
+    margin: 0px;
+}
+
+#event-board-container {
+    overflow: hidden;
+    top: 32px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#event-board {
+    overflow: hidden;
+    background-color: var(--background-color);
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    overflow: hidden;
+    background-color: var(--card-color);
+    /* border: solid white 1px; */
+    padding: 12px;
+    margin: 6px;
+    max-height: 120px;
+    /* width: 100%; */
+}
+
+.event-title {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-color);
+    padding: 4px;
+}
+
+.event-time {
+    /* padding-left: 30px; */
+}
+
+.card:hover{
+    /* background-color: #555555; */
+    outline: var(--highlight-border-color) 12px auto;
+}
+
+#top-right-btn {
+    float: right;
+    right: 0px;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#top-right-btn button {
+    width: 32px;
+    height: 100%;
+    text-align: center;
+    margin: 0px;
+    border: 0px;
+}
+
+#title-bar {
+    display: block;
+    position: fixed;
+    top: 0px;
+    margin-right: auto;
+    margin-left: 0px;
+    width: 100%;
+    height: 32px;
+    background-color: var(--nav-bar-color);
+    -webkit-app-region: drag;
+}
+
+#title-bar button {
+    -webkit-app-region: no-drag;
+}
+
+.nav-bar-container {
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+
+.nav-bar{
+    height: 100%;
+    background-color: var(--nav-bar-color);
+    /* border-bottom: solid white 1px; */
+}
+
+.nav-bar-btn {
+    float: left;
+    height: 100%;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.nav-bar-btn p{
+    padding: 4px;
+    /* height: 100%; */
+    vertical-align: middle;
+}
+
+.nav-bar-sep-line {
+    float:left;
+    width: 1px;
+    height: 100%;
+    /* background-color: white; */
+}
+
+.add-event-panel {
+    background-color: var(--card-color);
+    position: fixed;
+    align-self: center;
+    width: 60%;
+    padding: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    /* border: solid white 1px; */
+}
+
+
+.add-event-section {
+    padding: 2px;
+}
+
+#add-event-container{
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    top: 32px;
+    bottom: 0px;
+    margin: 0px;
+    background-color: var(--dark-cover);
+}
+
+#add-event-card {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    background-color: var(--card-color);
+    border: solid var(--weak-border-color) 1px;
+    padding: 8px;
+    max-height: 520px;
+    width: 90%; 
+}
+
+#add-event-title {
+    text-align: center;
+    padding: 4px;
+}
+
+#add-event-card input{
+    padding: 4px; 
+}
+
+#add-event-title input {
+    display: inline-block;
+    text-align: center;
+    height: 30px;
+    font-size: 18px;
+    color: var(--text-color);
+    padding: 4px;
+}
+
+#add-event-time input{
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+}
+
+.add-event-btn {
+    margin: 4px;
+    padding: 8px;
+    width: 10%;
+    text-align: center;
+    background-color: var(--button-color);
+}
+
+#add-event-cancel-btn {
+    float: left;
+}
+
+#add-event-confirm-btn {
+    float: right;
+}
